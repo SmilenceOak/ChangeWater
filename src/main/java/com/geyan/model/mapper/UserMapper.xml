@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geyan.dao.UserDao">
+	<resultMap id="UserBaseResultMap" type="com.geyan.model.User">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<result column="username" property="username" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="CHAR" />
+		<result column="realname" property="realname" jdbcType="VARCHAR" />
+		<result column="sex" property="sex" jdbcType="VARCHAR" />
+		<result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+		<result column="home_address" property="homeAddress" jdbcType="VARCHAR" />
+		<result column="QQ" property="qq" jdbcType="VARCHAR" />
+		<result column="MSN" property="msn" jdbcType="VARCHAR" />
+		<result column="mobile_number" property="mobileNumber"
+			jdbcType="VARCHAR" />
+		<result column="id_card" property="idCard" jdbcType="VARCHAR" />
+		<result column="current_address" property="currentAddress"
+			jdbcType="VARCHAR" />
+		<result column="nickname" property="nickname" jdbcType="VARCHAR" />
+		<result column="security_question1" property="securityQuestion1"
+			jdbcType="VARCHAR" />
+		<result column="security_question2" property="securityQuestion2"
+			jdbcType="VARCHAR" />
+		<result column="security_answer1" property="securityAnswer1"
+			jdbcType="VARCHAR" />
+		<result column="security_answer2" property="securityAnswer2"
+			jdbcType="VARCHAR" />
+		<result column="last_login_time" property="lastLoginTime"
+			jdbcType="TIMESTAMP" />
+		<result column="register_time" property="registerTime"
+			jdbcType="TIMESTAMP" />
+		<result column="area" property="area" jdbcType="VARCHAR" />
+		<result column="cash_password" property="cashPassword"
+			jdbcType="VARCHAR" />
+		<result column="area_city" property="areaCity" jdbcType="VARCHAR" />
+		<result column="photo" property="photo" jdbcType="VARCHAR" />
+		<result column="recommender" property="recommender" jdbcType="VARCHAR" />
+		<result column="score" property="score" jdbcType="INTEGER" />
+		<result column="disable_time" property="disableTime" jdbcType="TIMESTAMP" />
+		<result column="becomeCoordinationerTime" property="becomecoordinationertime"
+			jdbcType="TIMESTAMP" />
+		<result column="pips_acct_date" property="pipsAcctDate"
+			jdbcType="TIMESTAMP" />
+		<result column="pips_acct_no" property="pipsAcctNo" jdbcType="VARCHAR" />
+		<result column="borrower_info_id" property="borrowerInfoId"
+			jdbcType="VARCHAR" />
+		<result column="level" property="level" jdbcType="VARCHAR" />
+		<result column="bind_ip" property="bindIp" jdbcType="VARCHAR" />
+		<result column="referrer" property="referrer" jdbcType="VARCHAR" />
+		<result column="has_given_coupon" property="hasGivenCoupon"
+			jdbcType="BIT" />
+		<result column="hdcode" property="hdcode" jdbcType="VARCHAR" />
+		<result column="signUserId" property="signuserid" jdbcType="VARCHAR" />
+		<result column="signerCert" property="signerCert" jdbcType="VARCHAR" />
+		<result column="signImage" property="signImage" jdbcType="VARCHAR" />
+		<result column="personArea" property="personarea" jdbcType="INTEGER" />
+		<result column="id_hvps" property="idHvps" jdbcType="VARCHAR" />
+		<result column="isLonner" property="isLonner" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	  <select id="getUser" resultMap="UserBaseResultMap">
+       select
+        *
+        from user where password = 'a906449d5769fa7361d7ecc6aa3f6d28' limit 20000
+    </select>
+    
+    
+     <select id="getUserByLimit" resultMap="UserBaseResultMap" parameterType="map">
+       select
+        *
+        from user where password = 'a906449d5769fa7361d7ecc6aa3f6d28' limit #{page},#{pageNum}
+    </select>
+    
+    
+    <insert id="insertUser" parameterType="com.geyan.model.User" >
+        INSERT `user`(id,username,`password`,`status`,mobile_number,register_time,referrer,hdcode,isLonner) 
+        VALUES (#{id},#{username},#{password},1,#{mobileNumber},#{registerTime},#{referrer},#{hdcode},#{isLonner})
+    </insert>
+    
+    <update id="updateUser" parameterType="com.geyan.model.User">
+        update user u
+        <set>
+          <if test="password != null">
+            u.password= #{password,jdbcType=VARCHAR},
+          </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+	
+</mapper>

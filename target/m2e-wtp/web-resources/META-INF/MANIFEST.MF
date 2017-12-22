@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: jrbs-geyan
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: com.jrbs.geyan
+Build-Jdk: 1.7.0_60
+Built-By: haoquangy
+Created-By: Maven Integration for Eclipse
+Implementation-URL: https://www.jinrongboshi.com
+
