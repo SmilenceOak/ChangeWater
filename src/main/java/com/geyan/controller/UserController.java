@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,6 +24,8 @@ import com.geyan.service.UserService;
 public class UserController {
 	
 	@Resource UserService userService;
+	
+	private static Logger log = Logger.getLogger(UserController.class);
 	
 	CountDownLatch cd = new CountDownLatch(5);
 	
@@ -84,6 +87,18 @@ public class UserController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@RequestMapping("/testLog.htm")
+	public void testLog(){
+		System.out.println("开始执行！！！");
+		
+			log.debug("this is debug");
+			log.info("this is info");
+			log.error("this is error");
+		
+		System.out.println("执行完毕！！");
+		
 	}
 	
 	class MyThreadTest{

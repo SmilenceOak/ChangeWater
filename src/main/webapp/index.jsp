@@ -15,14 +15,21 @@
     </style>
 </head>
 <body>
-	<!-- <form action="/water/changeWater.htm" method="post" > -->
+	<form action="/water/changeWater.htm" method="post" >
 	
-	<form action="/water/getDate.htm" method="post" >
+	<!-- <form action="/water/getDate.htm" method="post" > -->
 	
 		
 	<button style="width:300px;height:100px;" type="submit">到底是谁</button>
 	
 	</form>
+	
+	 <form action="/water/testLog.htm" method="post" >
+    
+        
+    <button style="width:300px;height:100px;" type="submit">测试日志</button>
+    
+    </form>
 	<div class="showImg1" style=""></div> 
 </body>
 </html>

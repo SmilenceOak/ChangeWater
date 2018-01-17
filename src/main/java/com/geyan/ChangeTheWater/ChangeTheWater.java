@@ -7,7 +7,7 @@ import java.util.Map;
 public class ChangeTheWater {
 	
 
-	private static int countPeople = 10; 
+	private static int countPeople = 11; 
 	
 		
 		public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class ChangeTheWater {
 
 
 		private static String executeMethod() {
-			String[] allPeoples = {"葛岩","候廷鹏","王亚平","蒋邦田","霍宪伟","张子奇","刘建书","刘桐桐","朱旭升","李正一","郭东"};
+			String[] allPeoples = {"葛岩","候廷鹏","王亚平","蒋邦田","霍宪伟","张子奇","刘建书","刘桐桐","朱旭升","李正一","郭东","郑伟"};
 			Map<Integer, String> allPeoplesMap = new HashMap<Integer, String>();
 			int i= 0;
 			for(;;){

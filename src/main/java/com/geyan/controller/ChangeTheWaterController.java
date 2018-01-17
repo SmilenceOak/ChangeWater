@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,22 +19,26 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ChangeTheWaterController {
 	
-
-	 private int countPeople = 11;
+	Logger logger = Logger.getLogger(ChangeTheWaterController.class);
+	
+	 static private String[] allPeoples = {"葛岩","候廷鹏","王亚平","蒋邦田","霍宪伟","张子奇","刘建书","刘桐桐","朱旭生","李正一","郭东","何文凯","郑伟"};//参与搬水的所有人
 		
 		public static void main(String[] args) {
 			ChangeTheWaterController ctwc = new ChangeTheWaterController();
 			for(int i = 0; i <= 0 ;i++ ){
 				
-				ModelAndView name = ctwc.executeMethod();
+				ModelAndView name = ctwc.executeMethod(null);
 				System.out.println(name.getModelMap());
 			}
 			
 		}
 
 		@RequestMapping("/changeWater.htm")
-		public  ModelAndView executeMethod() {
+		public  ModelAndView executeMethod(HttpServletRequest request) {
 			
+			logger.info("开始执行！！！！");
+			
+			int countPeople = allPeoples.length; //有多少人 就执行人数*100次
 			Map<String ,Integer> countMap = new HashMap<String, Integer>();
 			ModelAndView modelAndView = new ModelAndView("changeWater");
 			for(int i = 0 ; i <countPeople*100 ;i++){
@@ -54,13 +61,24 @@ public class ChangeTheWaterController {
 				last2.setValue(last2.getValue()-1);
 			}
 			modelAndView.addObject("nameMap", list);  //从map中随机抽取
+			
+			Integer total = null;
+			if(request != null){
+				total = (Integer) request.getSession().getAttribute("count");
+				if(total == null){
+					total= 1;
+				}else{
+					total++;
+				}
+				request.getSession().setAttribute("count", total);
+			}
+			logger.info("执行结束！！！！执行了【"+total+"】次");
 			return modelAndView;
 		}
 		
 		public String getName(){
 			  //参与搬水的人数 从0开始计算
-			 String[] allPeoples = {"葛岩","候廷鹏","王亚平","蒋邦田","霍宪伟","张子奇","刘建书","刘桐桐","朱旭生","李正一","郭东","何文凯"};//参与搬水的所有人
-			 
+			int countPeople = allPeoples.length-1;
 			Map<Integer, String> allPeoplesMap = new HashMap<Integer, String>();
 			int i= 0;
 			for(;;){

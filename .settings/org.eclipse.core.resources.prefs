@@ -3,4 +3,5 @@ encoding//llpay/llpay.properties=UTF-8
 encoding//src/main/java/com/geyan/controller/DefaultController.java=UTF-8
 encoding//src/main/java/com/geyan/controller/Test.java=UTF-8
 encoding//src/main/java/com/geyan/shiro/MyRealm.java=UTF-8
+encoding//src/main/resources/config/properties/log4j.properties=UTF-8
 encoding/<project>=UTF-8

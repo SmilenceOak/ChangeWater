@@ -20,7 +20,16 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     
+    <!-- 此处不配置 不会输出日志 -->
+      <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
     
+    <context-param>
+	    <param-name>log4jConfigLocation</param-name>
+	    <param-value>classpath:config/properties/log4j.properties</param-value>
+     </context-param>
+    <!-- 此处不配置 不会输出日志 -->
       <filter>  
         <filter-name>shiroFilter</filter-name>  
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>  
