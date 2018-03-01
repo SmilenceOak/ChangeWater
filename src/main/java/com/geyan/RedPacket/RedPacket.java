@@ -120,7 +120,7 @@ public class RedPacket {
 	        int size = allHotPacket.size();
 	        BigDecimal max = BigDecimal.ZERO;
 	        int maxIndex = 0;
-	        for (int i = 0; i < size; i++) {
+	        for (int i = 0; i < size; i++) { 
 	            BigDecimal amout = allHotPacket.get(i);
 	            System.out.println("第" + (i + 1) + "随机的红包金额大小：" + amout);
 	            if (amout.compareTo(max) > 0) {
