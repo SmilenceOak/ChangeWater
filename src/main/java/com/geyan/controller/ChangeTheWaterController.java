@@ -21,7 +21,7 @@ public class ChangeTheWaterController {
 	
 	Logger logger = Logger.getLogger(ChangeTheWaterController.class);
 	
-	 static private String[] allPeoples = {"葛岩","候廷鹏","王亚平","蒋邦田","霍宪伟","张子奇","刘建书","刘桐桐","朱旭生","李正一","郭东","何文凯","郑伟"};//参与搬水的所有人
+	 static private String[] allPeoples = {"葛岩","候廷鹏","王亚平","蒋邦田","霍宪伟","张子奇","刘剑书","刘桐桐","朱旭生","李正一","郭东","何文凯","郑伟"};//参与搬水的所有人
 		
 		public static void main(String[] args) {
 			ChangeTheWaterController ctwc = new ChangeTheWaterController();
