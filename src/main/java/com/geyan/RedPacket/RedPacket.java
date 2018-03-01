@@ -116,7 +116,7 @@ public class RedPacket {
 
 	    public static void main(String[] args) {
 	        BigDecimal all = BigDecimal.ZERO;
-	        List<BigDecimal> allHotPacket = getAllHotPacket(10d, 5d, 3d, 1d);
+	        List<BigDecimal> allHotPacket = getAllHotPacket(100d, 20d, 3d, 1d);
 	        int size = allHotPacket.size();
 	        BigDecimal max = BigDecimal.ZERO;
 	        int maxIndex = 0;
