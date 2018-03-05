@@ -19,7 +19,7 @@ public class RedPacket {
 	
 	 private static Random random = new Random();
 
-	    private static BigDecimal MIN_VALUE = new BigDecimal("0.01"); //最小金额必须小于红包平均值 否则死循环
+	    private static BigDecimal MIN_VALUE = new BigDecimal("1.68"); //最小金额必须小于红包平均值 否则死循环
 
 	    private static boolean isMin = false;
 
@@ -115,8 +115,15 @@ public class RedPacket {
 	    }
 
 	    public static void main(String[] args) {
+	    	double amount = 1818d;
+	    	double count = 100d;
+	    	double avg = amount/count; 
+	    	if(avg < MIN_VALUE.doubleValue()){
+	    		System.out.println("最小红包金额不能大于平均值！！");
+	    	}
+	    	
 	        BigDecimal all = BigDecimal.ZERO;
-	        List<BigDecimal> allHotPacket = getAllHotPacket(100d, 20d, 3d, 1d);
+	        List<BigDecimal> allHotPacket = getAllHotPacket(amount, count, 3d, 1d);
 	        int size = allHotPacket.size();
 	        BigDecimal max = BigDecimal.ZERO;
 	        int maxIndex = 0;
