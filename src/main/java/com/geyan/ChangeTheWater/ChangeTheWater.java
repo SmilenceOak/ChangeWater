@@ -20,7 +20,7 @@ public class ChangeTheWater {
 
 
 		private static String executeMethod() {
-			String[] allPeoples = {"葛岩","候廷鹏","王亚平","蒋邦田","霍宪伟","张子奇","刘建书","刘桐桐","朱旭升","李正一","郭东","郑伟"};
+			String[] allPeoples = {"葛岩","候廷鹏","蒋邦田","霍宪伟","张子奇","刘建书","高辰波","刘桐桐","李正一","郭东","郑伟","崔智"};
 			Map<Integer, String> allPeoplesMap = new HashMap<Integer, String>();
 			int i= 0;
 			for(;;){

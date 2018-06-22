@@ -1,19 +1,13 @@
 package com.geyan.controller;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
+import java.util.Map.Entry;
 
 
 @Controller
@@ -21,7 +15,7 @@ public class ChangeTheWaterController {
 	
 	Logger logger = Logger.getLogger(ChangeTheWaterController.class);
 	
-	 static private String[] allPeoples = {"葛岩","候廷鹏","高辰波","蒋邦田","霍宪伟","张子奇","刘剑书","刘桐桐","李正一","郭东","何文凯","郑伟"};//参与搬水的所有人
+	 static private String[] allPeoples = {"葛岩","候廷鹏","蒋邦田","霍宪伟","张子奇","刘建书","高辰波","刘桐桐","李正一","郭东","郑伟","崔智"};//参与搬水的所有人
 		
 		public static void main(String[] args) {
 			ChangeTheWaterController ctwc = new ChangeTheWaterController();
